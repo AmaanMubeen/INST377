@@ -1,0 +1,53 @@
+body {
+	background: #D5F0F9;
+}
+
+#Name {
+	margin: auto;
+	width: 60%;
+	text-align: center
+}
+
+#Name h1 {
+	color: #EFF5F9;
+	background: #075182;
+}
+
+.content {
+	margin: auto;
+	width: 60%;
+}
+
+#luffy {
+	width: 20%;
+	margin: auto;
+	display: block;
+}
+
+#col1 {
+	float:left;
+	width: 50%;
+}
+
+#col2 {
+	float: right;
+	width: 50%;
+}
+
+h5 {
+	font-size: 14px;
+	font-style: italic;
+	color: #075182;
+}
+
+ul {
+	font-size: 13px;
+}
+
+li {
+	margin-bottom: 5px
+}
+
+p {
+	font-size: 14px;
+}
