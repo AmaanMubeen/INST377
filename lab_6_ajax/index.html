@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test AJAX page</title>
+    <link rel="stylesheet" type="text/css" href="./lab_styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Test AJAX page</div>
+        <button class="button" onclick="loadData()">Load Some JSON</button>
+        <div class="content"></div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script>
+      function loadData() {
+        fetch("ajax_sample.json")
+          .then(res => res.json())
+          .then(data => data.map(c => c.name + ": " + c.code)) // only one thing can be returned here, but you can use more than one property in it
+          .then(data => {
+            console.log(data);
+            shuffleArray(data);
+            
+            country_list = "<ol>";
+            for (i = 0; i < 15; i++) {
+              country_list += "<li>" + data[i] + "</li>";
+            }
+            console.log(country_list);
+
+            document.getElementsByClassName("content")[0].innerHTML = country_list;
+            // document.querySelector(".content").innerText = country_list;
+            // you can do work here
+            // all the work from the function in lab 5
+            // that loads data into your HTML
+            return data; // you MUST return from a closed fat-arrow
+          });
+      }
+
+      function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+      }
+    </script>
+  </body>
+</html>
